@@ -1,0 +1,31 @@
+
+<!--
+
+\file      boxer_mapeo.launch
+
+mapeo
+
+-->
+<launch>
+  
+<arg name="use_gazebo" default="true"/>
+
+<node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop_twist_keyboard" output="screen"/>
+
+<!--
+<include file="$(find boxer_pkg)/launch/map_server.launch"/>
+
+<include file="$(find boxer_pkg)/launch/amcl_only.launch"/>
+-->
+
+
+  <node pkg="gmapping" type="slam_gmapping" name="gmapping">
+    <param name="base_frame" value="base_link"/>
+    <param name="odom_frame" value="odom" />
+    <param name="delta" value="0.1" />
+    
+  </node>
+
+
+</launch>
+

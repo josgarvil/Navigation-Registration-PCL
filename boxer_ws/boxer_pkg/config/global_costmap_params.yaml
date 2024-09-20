@@ -1,0 +1,13 @@
+global_costmap:
+  update_frequency: 15
+  publish_frequency: 15
+  transform_tolerance: 0.8
+  width: 15
+  height: 15
+  origin_x: -7.5
+  origin_y: -7.5
+  rolling_window: true
+  inflation_radius: 5.5
+  resolution: 0.2        
+  plugins:
+   - {name: static_layer,        type: "costmap_2d::StaticLayer"}
